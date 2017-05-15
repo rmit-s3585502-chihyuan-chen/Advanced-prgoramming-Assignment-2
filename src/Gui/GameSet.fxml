@@ -34,7 +34,7 @@
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Button fx:id="asignOfficial" layoutX="79.0" layoutY="510.0" mnemonicParsing="false" onAction="#assignOfficier" prefHeight="23.0" prefWidth="126.0" text="Assign Official" />
+      <Button fx:id="asignOfficial" layoutX="79.0" layoutY="510.0" mnemonicParsing="false" onAction="#assignOfficier" prefHeight="23.0" prefWidth="126.0" text="Assign Chief Official" />
       <Button fx:id="deleteOfficial" layoutX="391.0" layoutY="510.0" mnemonicParsing="false" onAction="#deleteOfficers" prefHeight="23.0" prefWidth="126.0" text="Delete Official" />
       <Button fx:id="home" layoutX="306.0" layoutY="567.0" mnemonicParsing="false" onAction="#home" prefHeight="39.0" prefWidth="97.0" text="Home" />
       <Button fx:id="next" layoutX="79.0" layoutY="567.0" mnemonicParsing="false" onAction="#Next" prefHeight="39.0" prefWidth="97.0" text="Next" />

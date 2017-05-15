@@ -38,5 +38,4 @@ private TextArea display;
 		thisStage.setScene(menuPageScene);
 		thisStage.show();		
 	}
-	
-	}
+}

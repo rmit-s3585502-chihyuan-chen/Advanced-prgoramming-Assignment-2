@@ -51,6 +51,4 @@ public class GameMenuController  {
 		Stage exitStage = (Stage) exit.getScene().getWindow();
 	    exitStage.close();
 	}
-	
-	}
-
+}

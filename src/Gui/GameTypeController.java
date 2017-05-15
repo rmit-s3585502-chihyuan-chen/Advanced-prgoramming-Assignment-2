@@ -92,5 +92,4 @@ public class GameTypeController {
 		homeStage.setScene(homePageScene);
 		homeStage.show();		
 	}
-	
 }

@@ -70,44 +70,17 @@ public class GameResult {
 	private void getresult(String gameType, int[] result, int[] ranklist, String record) {
 		double [] result2 = new double [Ozlympic.addAthletes.size()];
 		if (gameType.equals("Running")){
-			for (int i = 0; i<Ozlympic.addAthletes.size(); i++){
-				result2[i]=result[i];
-			}
-		for (int j = 1; j < (Ozlympic.addAthletes.size()+1);j++){
-			for (int i = 0; i<Ozlympic.addAthletes.size(); i++){
-				if (ranklist[i]==j){
-				if (j==1){
-					Ozlympic.addAthletes.get(i).setPoint(5);
-					record =("\n"+Ozlympic.addAthletes.get(i).getId()+", "+result2[i]/10+", 5");
-					showResult.appendText(record);
-					Ozlympic.history.add(record);
-					
-					
-				}
-				else if (j==2){
-					Ozlympic.addAthletes.get(i).setPoint(2);
-					record =("\n"+Ozlympic.addAthletes.get(i).getId()+", "+result2[i]/10+", 2");
-					showResult.appendText(record);
-					Ozlympic.history.add(record);
-				}
-				else if (j==3){
-					Ozlympic.addAthletes.get(i).setPoint(1);
-					record =("\n"+Ozlympic.addAthletes.get(i).getId()+", "+result2[i]/10+", 1");
-					showResult.appendText(record);
-					Ozlympic.history.add(record);
-				}
-				else{
-					Ozlympic.addAthletes.get(i).setPoint(0);
-					record =("\n"+Ozlympic.addAthletes.get(i).getId()+", "+result2[i]/10+", 0");
-					showResult.appendText(record);
-					Ozlympic.history.add(record);
-				}
-			}
-				}
-			}
+			getrunresult(result2, result, ranklist, record);
 		}
 		else {
-			for (int j = 1; j < (Ozlympic.addAthletes.size()+1);j++){
+			getotherresult(result, ranklist, record);
+		}
+		Ozlympic.history.add("\n");
+		Ozlympic.history.add("\n");
+	}
+
+	private void getotherresult(int[] result, int[] ranklist, String record) {
+		for (int j = 1; j < (Ozlympic.addAthletes.size()+1);j++){
 			for (int i = 0; i<Ozlympic.addAthletes.size(); i++){
 				if (ranklist[i]==j){
 				if (j==1){
@@ -137,17 +110,47 @@ public class GameResult {
 			}
 				}
 			}
-			
-		}
-		Ozlympic.history.add("\n");
-		Ozlympic.history.add("\n");
 	}
 
+	private void getrunresult(double[] result2, int[] result, int[] ranklist, String record) {
+			for (int i = 0; i<Ozlympic.addAthletes.size(); i++){
+				result2[i]=result[i];
+			}
+		for (int j = 1; j < (Ozlympic.addAthletes.size()+1);j++){
+			for (int i = 0; i<Ozlympic.addAthletes.size(); i++){
+				if (ranklist[i]==j){
+				if (j==1){
+					Ozlympic.addAthletes.get(i).setPoint(5);
+					record =("\n"+Ozlympic.addAthletes.get(i).getId()+", "+result2[i]/10+", 5");
+					showResult.appendText(record);
+					Ozlympic.history.add(record);
+				}
+				else if (j==2){
+					Ozlympic.addAthletes.get(i).setPoint(2);
+					record =("\n"+Ozlympic.addAthletes.get(i).getId()+", "+result2[i]/10+", 2");
+					showResult.appendText(record);
+					Ozlympic.history.add(record);
+				}
+				else if (j==3){
+					Ozlympic.addAthletes.get(i).setPoint(1);
+					record =("\n"+Ozlympic.addAthletes.get(i).getId()+", "+result2[i]/10+", 1");
+					showResult.appendText(record);
+					Ozlympic.history.add(record);
+				}
+				else{
+					Ozlympic.addAthletes.get(i).setPoint(0);
+					record =("\n"+Ozlympic.addAthletes.get(i).getId()+", "+result2[i]/10+", 0");
+					showResult.appendText(record);
+					Ozlympic.history.add(record);
+				}
+			}
+				}
+			}
+		}
 
 	@FXML
 	private void home(ActionEvent event) throws IOException {
 		Ozlympic.gameSelect = false;
-       	
 		Ozlympic.tempAthletes.clear();
 		Ozlympic.addAthletes.clear();
        	Parent menuPage =FXMLLoader.load(getClass().getResource("GameMenu.fxml"));
@@ -155,6 +158,5 @@ public class GameResult {
 		Stage thisStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		thisStage.setScene(menuPageScene);
 		thisStage.show();
-		
 	}
 }

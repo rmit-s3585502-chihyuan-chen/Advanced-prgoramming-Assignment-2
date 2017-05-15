@@ -150,8 +150,7 @@ private void Next(ActionEvent event) throws ExceptionAlert {
 			} catch (Exception ExceptionAlert) {
 					} 
 		}
-	} catch (Exception ExceptionAlert) {
-		
+	} catch (Exception ExceptionAlert) {	
 	}
 }
 @FXML
@@ -175,7 +174,6 @@ private void assignOfficier(){
 		
 		showSelection();//Refresh list					
 } catch(Exception ExceptionAlert) {
-		
 	}
 }
 private void getAssignOfficer() {
@@ -190,18 +188,14 @@ private void getAssignOfficer() {
 		}
 	}
 @FXML
-private void addParticipant() {		
-	
+private void addParticipant() {
 	try {
 		if(participant.size() > 7) {
 			throw new ExceptionAlert("Each game can only have 4 to 8 participants"); } 
 		else {				
 			String addPlayers = (String) availableAthletes.getSelectionModel().getSelectedItem();
-				
 			if(addPlayers != null) {
 				participant.add(addPlayers);
-			
-			
 				for(int i = 0; i < athleteList.size(); i++) {	
 					String AthletesList = athleteList.get(i);				
 					if (addPlayers.equals(AthletesList)) {
@@ -210,10 +204,8 @@ private void addParticipant() {
 				}
 			}
 		}
-		showSelection();//Refresh list					
-
+		showSelection();//Refresh list
 } catch(Exception ExceptionAlert) {
-		
 	}
 }
 @FXML
