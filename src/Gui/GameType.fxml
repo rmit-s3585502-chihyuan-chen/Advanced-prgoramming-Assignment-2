@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.GameTypeController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="14.0" prefHeight="88.0" prefWidth="500.0" text="Select the game type">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Button fx:id="swimming" alignment="CENTER" contentDisplay="CENTER" layoutX="205.0" layoutY="163.0" mnemonicParsing="false" onAction="#swimming" text="Swimming" />
+      <Button fx:id="cycling" alignment="CENTER" contentDisplay="CENTER" layoutX="205.0" layoutY="220.0" mnemonicParsing="false" onAction="#cycling" prefHeight="23.0" prefWidth="76.0" text="Cycling" />
+      <Button fx:id="running" alignment="CENTER" contentDisplay="CENTER" layoutX="205.0" layoutY="277.0" mnemonicParsing="false" onAction="#running" prefHeight="23.0" prefWidth="76.0" text="Running" />
+      <Button fx:id="home" alignment="CENTER" contentDisplay="CENTER" layoutX="205.0" layoutY="335.0" mnemonicParsing="false" onAction="#home" prefHeight="23.0" prefWidth="76.0" text="Home" />
+      <Button fx:id="exit" alignment="CENTER" contentDisplay="CENTER" layoutX="205.0" layoutY="388.0" mnemonicParsing="false" onAction="#exit" prefHeight="23.0" prefWidth="76.0" text="Exit" />
+   </children>
+</AnchorPane>

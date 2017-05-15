@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.displayResult">
+   <children>
+      <TextArea fx:id="display" layoutX="40.0" layoutY="93.0" prefHeight="278.0" prefWidth="420.0" />
+      <Label layoutX="152.0" layoutY="39.0" text="All Games Results">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <Button layoutX="202.0" layoutY="412.0" mnemonicParsing="false" onAction="#home" prefHeight="41.0" prefWidth="97.0" text="Home" />
+   </children>
+</AnchorPane>
