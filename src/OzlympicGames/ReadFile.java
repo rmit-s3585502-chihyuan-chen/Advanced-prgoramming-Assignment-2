@@ -29,6 +29,7 @@ public class ReadFile {
 			System.out.println("Could not find info.txt");
 		}
 	}
+	
 	public ArrayList<Official> loadOfficersTxt(ArrayList<Official> officials) throws IOException {
 		ArrayList<Official> officerData = new ArrayList<Official>();
         String next = input.readLine();
@@ -51,8 +52,6 @@ public class ReadFile {
 		return officerData;	
 		}
          
-		
-		
 	public ArrayList<Athletes> loadAthletesTxt (ArrayList<Athletes> athletes) throws IOException {
 		ArrayList<Athletes> athletesData = new ArrayList<Athletes>(); 
 		String next = input.readLine();
@@ -64,19 +63,15 @@ public class ReadFile {
 			int age = Integer.valueOf(data[3]);
 			String state = data[4];
 			int point = 0;
-		
 			Athletes test = new Athletes(id,type,name,age,state,point);
-
 			if (test.getType().equals("cyclist")) {				
 				Cyclists cyclist = new Cyclists(id,type,name,age,state,point);
 				athletes.add(cyclist);				
 			}
-			
 			else if (test.getType().equals("swimmer")) {
 				Swimmers swimmer = new Swimmers(id,type,name,age,state,point);
 				athletes.add(swimmer);				
 			}
-			
 			else if (test.getType().equals("sprinter")) {				
 				Sprinters sprinter = new Sprinters(id,type,name,age,state,point);
 				athletes.add(sprinter);				
@@ -87,9 +82,7 @@ public class ReadFile {
 			}	
 			next = input.readLine();
 		}
-
 	input.close();
 	return athletesData;
 	}
-
 }

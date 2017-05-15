@@ -26,13 +26,11 @@ import Data.Sprinters;
 import Data.SuperAthletes;
 
 public class Ozlympic extends Application {
-
 	public static ArrayList<Athletes> athletes = new ArrayList<Athletes>(); 
 	public static ArrayList<Official> officials = new ArrayList<Official>();
 	public static ArrayList<String> history = new ArrayList<String>(); 
 	public static ArrayList<Athletes> tempAthletes = new ArrayList<Athletes>(); 
 	public static ArrayList<Athletes> addAthletes = new ArrayList<Athletes>();
-	
 	public static boolean gameSelect = false; 
 	public static Games gameinfo = new Games();
 	static PrintWriter out = null;
@@ -61,22 +59,18 @@ public class Ozlympic extends Application {
 			loading.loadAthletesTxt(athletes);
 			loading.ReadFile();
 			loading.loadOfficersTxt(officials);
-		
-			
 		}catch (Exception e) {
 			System.out.println("Cannot load txt file");
 			}	
 		}
-	
 
 	static void displayGames(ArrayList<Athletes> comp, ArrayList<Athletes> loadArray, ArrayList<Official> official, ArrayList<String> history) {
-		
 		for (int i = 0; i < history.size(); i++) {
 			String test = history.get(i);
 		System.out.println(test);
-		} 	
-
+		} 
 	}
+	
 	public static Games selectGame(int selection) {
 		Games newGame = new Games();
 		switch(selection) {
@@ -97,6 +91,7 @@ public class Ozlympic extends Application {
 		}
 		return newGame;
 	}
+	
 	public static void saving(){
 		FileWriter writer = null;
 		try {
@@ -112,5 +107,4 @@ public class Ozlympic extends Application {
 			System.exit(0);
 		}
 	}
-	
 }

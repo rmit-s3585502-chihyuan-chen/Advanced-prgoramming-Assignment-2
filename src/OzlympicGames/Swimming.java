@@ -15,7 +15,6 @@ import Data.SuperAthletes;
 
 //inherit attributes from Games
 public class Swimming extends Games {
-	
 	//constructor of Swimming game
 	public Swimming() {
 		super();
@@ -24,15 +23,11 @@ public class Swimming extends Games {
 	}
 
 public ArrayList<Athletes> loadAthletes(ArrayList<Athletes> athletes){ 
-		
-		ArrayList<Athletes> playersData = new ArrayList<Athletes>(); 
-
-
+		ArrayList<Athletes> playersData = new ArrayList<Athletes>();
 		for (int i=0; i < athletes.size(); i++) {			
 			Athletes players = athletes.get(i);		
 			if	(players instanceof SuperAthletes|| players instanceof Swimmers) {
-				playersData.add(players);					
-
+				playersData.add(players);
 				} 
 			}		
 		return playersData;

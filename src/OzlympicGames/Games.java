@@ -24,7 +24,6 @@ public class Games {
 	public void playGame (ArrayList<Athletes> addAthletes, Games gameinfo, ArrayList<Official>official){
 		this.setGameId(GameId);		
 		String superName = GameType;
-		
 	}
 	public ArrayList<Athletes> loadAthletes(ArrayList<Athletes> athletes){
 		this.athletes = athletes;
@@ -33,7 +32,6 @@ public class Games {
 	
 	public Athletes getaddAthletes(){
 		return player;
-		
 	}
 	public String GameType() {	
 		return GameType;
@@ -62,20 +60,12 @@ public class Games {
 	public static void ReduceGameRound(int GameRound) {
 		Games.GameRound -= GameRound;
 	}
-	
 
-		public Official getOfficial() {
+	public Official getOfficial() {
 		return offical;
 	}
 
 	public void setOfficial(Official offical) {
 		this.offical = offical;
 	}
-	
-		
-	}
-	
-	
-	
-	
-
+}

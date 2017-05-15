@@ -18,8 +18,6 @@ import Data.Sprinters;
 //inherit attributes from Games
 public class Cycling extends Games{
 	
-	
-	
 	//constructor of cycling game
 	public Cycling() {
 		super();
@@ -28,18 +26,13 @@ public class Cycling extends Games{
 	}
 	
 public ArrayList<Athletes> loadAthletes(ArrayList<Athletes> athletes){ 
-		
 		ArrayList<Athletes> playersData = new ArrayList<Athletes>(); 
-
-
 		for (int i=0; i < athletes.size(); i++) {			
 			Athletes players = athletes.get(i);		
 			if	(players instanceof SuperAthletes|| players instanceof Cyclists) {
-				playersData.add(players);					
-
+				playersData.add(players);
 				} 
 			}		
 		return playersData;
 	}
-
 }
