@@ -1,5 +1,10 @@
 package Gui;
-
+/**
+ * @date 14.05.2017
+ * @author Chih Yuan Chen S3585502
+ * @version 1.0
+ * @Description displayResult
+ */
 import OzlympicGames.Ozlympic;
 
 import java.io.IOException;
@@ -22,7 +27,7 @@ private TextArea display;
 	private void initialize() {
 		for (int i = 0; i < Ozlympic.history.size(); i++) {
 		String gameresults = Ozlympic.history.get(i);
-		display.appendText(gameresults+"\n"+"========="+"\n");
+		display.appendText(gameresults+"\n");
 	}
 }
 	@FXML

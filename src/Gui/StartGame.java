@@ -1,4 +1,10 @@
 package Gui;
+/**
+ * @date 14.05.2017
+ * @author Chih Yuan Chen S3585502
+ * @version 1.0
+ * @Description StartGame
+ */
 import java.io.IOException;
 
 import javafx.application.*;
@@ -48,14 +54,13 @@ private void displayEvent(){
 }
 @FXML
 private void startGame(ActionEvent event) throws IOException {			
-	if(Ozlympic.gameSelect == true) {
-	Ozlympic.gameinfo.playGame(Ozlympic.addAthletes, Ozlympic.gameinfo, Ozlympic.officials);
+
 	Parent alertPage =FXMLLoader.load(getClass().getResource("GameResult.fxml"));
 	Scene alertPageScene = new Scene(alertPage);
 	Stage thisStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 	thisStage.setScene(alertPageScene);
 	thisStage.show();	
-	}	
+		
 }
 @FXML
 private void home(ActionEvent event) throws IOException {

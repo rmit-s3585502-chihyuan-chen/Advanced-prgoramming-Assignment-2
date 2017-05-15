@@ -28,11 +28,11 @@ public class Ozlympic extends Application {
 	public static ArrayList<Official> officials = new ArrayList<Official>();
 	public static ArrayList<String> history = new ArrayList<String>(); 
 	public static ArrayList<Athletes> tempAthletes = new ArrayList<Athletes>(); 
-	public static ArrayList<Athletes> addAthletes = new ArrayList<Athletes>(); 
+	public static ArrayList<Athletes> addAthletes = new ArrayList<Athletes>();
+	
 	public static boolean gameSelect = false; 
-	public static Games gameinfo = new Games();//This is the primary event object for each Game
+	public static Games gameinfo = new Games();
 	static PrintWriter out = null;
-	static String timeStamp = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss").format(new Date());
 	public static Stage primaryStage;
 	public void start(Stage primaryStage) {
 		try {
@@ -63,16 +63,7 @@ public class Ozlympic extends Application {
 			System.out.println("Cannot load txt file");
 			}	
 		}
-	public static void pastGame() {
-
-		
-		String completedGame = new String ("The Champion" + (gameinfo.getGameId()) + " was " + (gameinfo.getChampion()) + "\n" +
-				"The Second  was " + (gameinfo.getSecond()) + "\n" +
-				"The Third   was " + (gameinfo.getThird()) + "\n" +
-				"The overseeing official was " + (gameinfo.getOfficial().getName() + "" + (gameinfo.getOfficial().getId())));
-				history.add(completedGame);    
-		
-	}
+	
 
 	static void displayGames(ArrayList<Athletes> comp, ArrayList<Athletes> loadArray, ArrayList<Official> official, ArrayList<String> history) {
 		
