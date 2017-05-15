@@ -38,7 +38,6 @@ public class Athletes {
 		return age;
 	}
 
-	
 	public int getPoint() {
 		return point;
 	}
@@ -65,7 +64,6 @@ public class Athletes {
 	
 	public void setPoint(int i) {
 		point = point + i;
-		
 	}
 	
 	public String getType() {
@@ -75,8 +73,4 @@ public class Athletes {
 	public void setType(String type) {
 		this.type = type;
 	}
-	
 }
-
-	
-

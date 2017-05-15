@@ -13,7 +13,6 @@ public class History {
 	public String[] temporaryResult = new String[8];//set array to store Result
 	public String[] temporaryRank = new String[8]; //set array to store Rank
 	
-	
 	//constructor of temporary history to define its attributes
 	public History(String GameID,String OfficialName,String[]temporaryID,String[]temporaryName,String[]temporaryResult,String[]temporaryRank){
 		this.GameID=GameID;
@@ -42,5 +41,4 @@ public class History {
 	public String[] getTemporaryRank() {
 		return temporaryRank;
 	}
-	
 }

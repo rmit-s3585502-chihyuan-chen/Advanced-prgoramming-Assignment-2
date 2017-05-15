@@ -10,12 +10,11 @@ package Data;
 
 public class Official{
 	   private String id;      //set id parameter  
-	   private String type;
+	   private String type;   //set type parameter  
 	   private String name;   //set name parameter   
 	   private int age;       //set age parameter
-	   private String state; //set state parameter
-	   private int point;
-	   
+	   private String state;  //set state parameter
+	   private int point;    //set point parameter
 	   //set attributes of official
 	   public Official (String id,String type,String name,int age,String state,int point){
 		   this.setId(id);
@@ -37,7 +36,6 @@ public class Official{
 			return age;
 		}
 
-		
 		public int getPoint() {
 			return point;
 		}
@@ -64,7 +62,6 @@ public class Official{
 		
 		public void setPoint(int i) {
 			point = point + i;
-			
 		}
 		
 		public String getType() {
@@ -74,5 +71,4 @@ public class Official{
 		public void setType(String type) {
 			this.type = type;
 		}
-		
 }

@@ -12,11 +12,7 @@ public class Swimmers extends Athletes{
 	//Set the attribute of Swimmers and inherit attributes from Athletes
 	public Swimmers(String id, String type,String name, int age, String state,int point) {
 		super(id,type,name, age, state,point);
-	
 	}
-	
-		
-	
 	//Restrict time and run Swimming and set parameter id to connect with driver
 	public int compete(String superName) {
 		int max=200;//set the max game time
@@ -25,8 +21,4 @@ public class Swimmers extends Athletes{
         int time = random.nextInt(max)%(max-min+1) + min;//generate time and return it to result
         return time;
 	}
-	
-
-	
-
 }

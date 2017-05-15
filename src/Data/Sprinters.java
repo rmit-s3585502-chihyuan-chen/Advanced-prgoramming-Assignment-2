@@ -6,24 +6,20 @@ package Data;
  * @Description setting the role of athletes 
  */
 
-
 import java.util.Random; //import random function to set compete time 
 
 public class Sprinters extends Athletes{
 	//Set the attribute of sprinters and inherit attributes from Athletes
 	public Sprinters(String id, String type,String name, int age, String state,int point) {
 		super(id,type,name, age, state,point);
-	
 	}
 	
 	//Restrict time and run the sprint and set parameter id to connect with driver
 	public int compete(String GameType) {
 		int max=200; //set the max game time 
 	    int min=100; //set the min game time 
-		
 	    Random random = new Random(); //Create random variable
 		int time = random.nextInt(max)%(max-min+1) + min;
 		return time;
 	}
-
 }
