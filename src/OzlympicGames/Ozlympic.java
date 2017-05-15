@@ -1,4 +1,6 @@
 package OzlympicGames;
+import java.io.FileWriter;
+import java.io.IOException;
 /**
  * @date 15.05.2017
  * @author You Hao s3583715
@@ -14,6 +16,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import Data.Official;
 import Data.Athletes;
@@ -40,6 +43,7 @@ public class Ozlympic extends Application {
 			Scene Mainscene = new Scene(Ozlympic);
 			primaryStage.setScene(Mainscene);
 			primaryStage.setTitle("Ozlympic");
+			primaryStage.getIcons().add(new Image("/images/Olympics.png"));
 			primaryStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -93,5 +97,20 @@ public class Ozlympic extends Application {
 		}
 		return newGame;
 	}
-
+	public static void saving(){
+		FileWriter writer = null;
+		try {
+			writer = new FileWriter("gameResults.txt", true);
+			for (int i = 0; i < Ozlympic.history.size(); i++){
+			writer.write(Ozlympic.history.get(i));
+			}
+			writer.write("-------------------------------------");
+			writer.write(System.getProperty("line.separator"));
+			writer.close();// flushes the stream.
+		} catch (IOException e) {
+			System.err.println("File cannot be created, or cannot be opened");
+			System.exit(0);
+		}
+	}
+	
 }

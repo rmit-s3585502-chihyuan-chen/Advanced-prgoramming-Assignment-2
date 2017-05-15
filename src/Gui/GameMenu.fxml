@@ -14,9 +14,9 @@
             <Font name="Times New Roman Bold" size="32.0" />
          </font>
       </Label>
-      <Button layoutX="141.0" layoutY="157.0" mnemonicParsing="false" onAction="#GameType" prefHeight="23.0" prefWidth="219.0" text="Create new game" />
+      <Button layoutX="141.0" layoutY="157.0" mnemonicParsing="false" onAction="#GameType" prefHeight="23.0" prefWidth="219.0" text="Create a new game" />
       <Button layoutX="141.0" layoutY="221.0" mnemonicParsing="false" onAction="#displayresult" prefHeight="23.0" prefWidth="219.0" text="Display results of all games" />
-      <Button layoutX="141.0" layoutY="286.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="219.0" text="Display all ponits of all athletes" />
+      <Button layoutX="141.0" layoutY="286.0" mnemonicParsing="false" onAction="#displayPoint" prefHeight="23.0" prefWidth="219.0" text="Display all ponits of all athletes" />
       <Button fx:id="exit" layoutX="141.0" layoutY="350.0" mnemonicParsing="false" onAction="#exit" prefHeight="23.0" prefWidth="219.0" text="Quit" />
    </children>
 </AnchorPane>

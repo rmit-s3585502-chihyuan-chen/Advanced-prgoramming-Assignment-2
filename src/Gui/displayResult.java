@@ -27,7 +27,7 @@ private TextArea display;
 	private void initialize() {
 		for (int i = 0; i < Ozlympic.history.size(); i++) {
 		String gameresults = Ozlympic.history.get(i);
-		display.appendText(gameresults+"\n");
+		display.appendText(gameresults);
 	}
 }
 	@FXML

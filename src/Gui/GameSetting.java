@@ -82,6 +82,7 @@ private void back(ActionEvent event) throws IOException {
 	}
 @FXML
 private void exit() {
+	Ozlympic.saving();
 	Stage exitStage = (Stage) exit.getScene().getWindow();
     exitStage.close();
 }

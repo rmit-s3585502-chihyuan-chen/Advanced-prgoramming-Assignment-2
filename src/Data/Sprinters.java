@@ -18,8 +18,8 @@ public class Sprinters extends Athletes{
 	
 	//Restrict time and run the sprint and set parameter id to connect with driver
 	public int compete(String GameType) {
-		int max=20; //set the max game time 
-	    int min=10; //set the min game time 
+		int max=200; //set the max game time 
+	    int min=100; //set the min game time 
 		
 	    Random random = new Random(); //Create random variable
 		int time = random.nextInt(max)%(max-min+1) + min;

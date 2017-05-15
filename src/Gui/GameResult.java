@@ -23,6 +23,7 @@ import OzlympicGames.Swimming;
 import Data.Official;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -42,7 +43,8 @@ public class GameResult {
 		String recordDate=null;
 		String recordLine=null;
 		String record = null;
-		String date = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss").format(new Date());
+		String date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+		int date2 = Integer.valueOf(new SimpleDateFormat("SSS").format(new Date()));
 		Ozlympic.gameSelect = true;
 		Ozlympic.gameinfo.playGame(Ozlympic.addAthletes, Ozlympic.gameinfo, Ozlympic.officials);
 		int[] result = new int[Ozlympic.addAthletes.size()];
@@ -55,37 +57,93 @@ public class GameResult {
 				for (int j=0; j < Ozlympic.addAthletes.size(); j++){
 				if(result[i]>result[j]){
 					ranklist[i] = ranklist[i] + 1;}
-			}}
-		recordDate=(Ozlympic.gameinfo.getGameId()+" ,"+Ozlympic.gameinfo.getOfficial().getId()+","+date);
+			}
+		}
+		recordDate=(Ozlympic.gameinfo.getGameId()+", "+Ozlympic.gameinfo.getOfficial().getId()+", "+date+"."+new DecimalFormat("#").format(date2/10));
 		Ozlympic.history.add(recordDate);
-		showResult.appendText(Ozlympic.gameinfo.getGameId()+"\t"+","+Ozlympic.gameinfo.getOfficial().getId()+"\t"+","+date);
+		showResult.appendText(Ozlympic.gameinfo.getGameId()+","+"\t"+Ozlympic.gameinfo.getOfficial().getId()+","+"\t"+date+"."+new DecimalFormat("#").format(date2/10));
+		
+		getresult(Ozlympic.gameinfo.GameType(), result, ranklist, record);				
+		}
+		
+	
+	private void getresult(String gameType, int[] result, int[] ranklist, String record) {
+		double [] result2 = new double [Ozlympic.addAthletes.size()];
+		if (gameType.equals("Running")){
+			for (int i = 0; i<Ozlympic.addAthletes.size(); i++){
+				result2[i]=result[i];
+			}
 		for (int j = 1; j < (Ozlympic.addAthletes.size()+1);j++){
 			for (int i = 0; i<Ozlympic.addAthletes.size(); i++){
 				if (ranklist[i]==j){
 				if (j==1){
 					Ozlympic.addAthletes.get(i).setPoint(5);
-					showResult.appendText("\n"+Ozlympic.addAthletes.get(i).getId()+" ,"+result[i]+","+Ozlympic.addAthletes.get(i).getPoint());
+					record =("\n"+Ozlympic.addAthletes.get(i).getId()+", "+result2[i]/10+", 5");
+					showResult.appendText(record);
+					Ozlympic.history.add(record);
+					
+					
 				}
 				else if (j==2){
 					Ozlympic.addAthletes.get(i).setPoint(2);
-					showResult.appendText("\n"+Ozlympic.addAthletes.get(i).getId()+" ,"+result[i]+","+Ozlympic.addAthletes.get(i).getPoint());
+					record =("\n"+Ozlympic.addAthletes.get(i).getId()+", "+result2[i]/10+", 2");
+					showResult.appendText(record);
+					Ozlympic.history.add(record);
 				}
 				else if (j==3){
 					Ozlympic.addAthletes.get(i).setPoint(1);
-					showResult.appendText("\n"+Ozlympic.addAthletes.get(i).getId()+" ,"+result[i]+","+Ozlympic.addAthletes.get(i).getPoint());
+					record =("\n"+Ozlympic.addAthletes.get(i).getId()+", "+result2[i]/10+", 1");
+					showResult.appendText(record);
+					Ozlympic.history.add(record);
 				}
 				else{
 					Ozlympic.addAthletes.get(i).setPoint(0);
-					showResult.appendText("\n"+Ozlympic.addAthletes.get(i).getId()+" ,"+result[i]+","+Ozlympic.addAthletes.get(i).getPoint());
+					record =("\n"+Ozlympic.addAthletes.get(i).getId()+", "+result2[i]/10+", 0");
+					showResult.appendText(record);
+					Ozlympic.history.add(record);
 				}
-			}}}for(int i=0; i<Ozlympic.addAthletes.size();i++){
-		record =(Ozlympic.addAthletes.get(i).getId()+" ,"+result[i]+","+Ozlympic.addAthletes.get(i).getPoint());		
-		Ozlympic.history.add(record);}	
-		recordLine=(""+"\n");
-		Ozlympic.history.add(recordLine);				
+			}
+				}
+			}
 		}
-		
-	
+		else {
+			for (int j = 1; j < (Ozlympic.addAthletes.size()+1);j++){
+			for (int i = 0; i<Ozlympic.addAthletes.size(); i++){
+				if (ranklist[i]==j){
+				if (j==1){
+					Ozlympic.addAthletes.get(i).setPoint(5);
+					record =("\n"+Ozlympic.addAthletes.get(i).getId()+", "+result[i]+", 5");
+					showResult.appendText(record);
+					Ozlympic.history.add(record);
+				}
+				else if (j==2){
+					Ozlympic.addAthletes.get(i).setPoint(2);
+					record =("\n"+Ozlympic.addAthletes.get(i).getId()+", "+result[i]+", 2");
+					showResult.appendText(record);
+					Ozlympic.history.add(record);
+				}
+				else if (j==3){
+					Ozlympic.addAthletes.get(i).setPoint(1);
+					record =("\n"+Ozlympic.addAthletes.get(i).getId()+", "+result[i]+", 1");
+					showResult.appendText(record);
+					Ozlympic.history.add(record);
+				}
+				else{
+					Ozlympic.addAthletes.get(i).setPoint(0);
+					record =("\n"+Ozlympic.addAthletes.get(i).getId()+", "+result[i]+", 0");
+					showResult.appendText(record);
+					Ozlympic.history.add(record);
+				}
+			}
+				}
+			}
+			
+		}
+		Ozlympic.history.add("\n");
+		Ozlympic.history.add("\n");
+	}
+
+
 	@FXML
 	private void home(ActionEvent event) throws IOException {
 		Ozlympic.gameSelect = false;

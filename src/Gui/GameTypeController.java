@@ -80,6 +80,7 @@ public class GameTypeController {
 	}
 	@FXML
 	private void exit() {
+		Ozlympic.saving();
 		Stage exitStage = (Stage) exit.getScene().getWindow();
 	    exitStage.close();
 	}

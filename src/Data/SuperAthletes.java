@@ -23,8 +23,8 @@ public class SuperAthletes extends Athletes {
         int min=0;//set the max game time
        
         if(GameType == "Running") {
-			max = 20;
-			min = 10;
+			max = 200;
+			min = 100;
 		} else if (GameType =="Cycling") {
 			max = 800;
 			min = 500;

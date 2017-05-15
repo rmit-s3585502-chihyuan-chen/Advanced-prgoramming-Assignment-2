@@ -38,7 +38,16 @@ public class GameMenuController  {
 		thisStage.show();		
 	}
 	@FXML
+	private void displayPoint(ActionEvent event) throws IOException {
+		Parent alertPage =FXMLLoader.load(getClass().getResource("DisplayPoint.fxml"));
+		Scene alertPageScene = new Scene(alertPage);
+		Stage thisStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		thisStage.setScene(alertPageScene);
+		thisStage.show();		
+	}
+	@FXML
 	private void exit() {
+		Ozlympic.saving();
 		Stage exitStage = (Stage) exit.getScene().getWindow();
 	    exitStage.close();
 	}
