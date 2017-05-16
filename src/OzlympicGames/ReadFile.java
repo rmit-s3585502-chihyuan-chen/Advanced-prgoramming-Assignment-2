@@ -31,58 +31,70 @@ public class ReadFile {
 	}
 	
 	public ArrayList<Official> loadOfficersTxt(ArrayList<Official> officials) throws IOException {
-		ArrayList<Official> officerData = new ArrayList<Official>();
         String next = input.readLine();
         while (next != null) {
             String[] data = next.split(", ");
             String id = data[0];
             String type = data[1];
 			String name = data[2];
-			int age = Integer.valueOf(data[3]);
+			String age = data[3];
 			String state = data[4];
 			int point = 0;
-			Official test = new Official(id,type,name, age, state, point);
-			if (test.getType().equals("officer")) {
-				Official officers = new Official(id,type,name, age, state, point);
-				officials.add(officers);				
+			boolean valid = !(id.equals(" ") || id.equals("") || type.equals("") || type.equals(" ")
+					|| name.equals("") || name.equals(" ") || state.equals("") || state.equals(" ")
+					|| age.equals("") || age.equals(" "));
+			boolean dup = true;
+			for (int i = 0; i < officials.size(); i++){
+				dup = !(id.equals(officials.get(i).getId()));
+			}
+			Official test = new Official(id,type,name, Integer.valueOf(data[3]), state, point);
+			if (test.getType().equals("officer") && valid && dup) {
+				Official officers = new Official(id,type,name, Integer.valueOf(data[3]), state, point);
+				officials.add(officers);					
 			}
 			next = input.readLine();
 			}
         input.close();
-		return officerData;	
+		return officials;	
 		}
          
 	public ArrayList<Athletes> loadAthletesTxt (ArrayList<Athletes> athletes) throws IOException {
-		ArrayList<Athletes> athletesData = new ArrayList<Athletes>(); 
 		String next = input.readLine();
         while (next != null) {
             String[] data = next.split(", ");
             String id = data[0];
             String type = data[1];
 			String name = data[2];
-			int age = Integer.valueOf(data[3]);
+			String age = data[3];
 			String state = data[4];
 			int point = 0;
-			Athletes test = new Athletes(id,type,name,age,state,point);
-			if (test.getType().equals("cyclist")) {				
-				Cyclists cyclist = new Cyclists(id,type,name,age,state,point);
+			boolean valid = !(id.equals(" ") || id.equals("") || type.equals("") || type.equals(" ")
+					|| name.equals("") || name.equals(" ") || state.equals("") || state.equals(" ")
+					|| age.equals("") || age.equals(" "));
+			boolean dup = true;
+			for (int i = 0; i < athletes.size(); i++){
+				dup = !(id.equals(athletes.get(i).getId()));
+			}
+			Athletes test = new Athletes(id,type,name,Integer.valueOf(data[3]),state,point);
+			if (test.getType().equals("cyclist")&& valid&& dup) {				
+				Cyclists cyclist = new Cyclists(id,type,name,Integer.valueOf(data[3]),state,point);
 				athletes.add(cyclist);				
 			}
-			else if (test.getType().equals("swimmer")) {
-				Swimmers swimmer = new Swimmers(id,type,name,age,state,point);
+			else if (test.getType().equals("swimmer")&& valid&& dup) {
+				Swimmers swimmer = new Swimmers(id,type,name,Integer.valueOf(data[3]),state,point);
 				athletes.add(swimmer);				
 			}
-			else if (test.getType().equals("sprinter")) {				
-				Sprinters sprinter = new Sprinters(id,type,name,age,state,point);
+			else if (test.getType().equals("sprinter")&& valid&& dup) {				
+				Sprinters sprinter = new Sprinters(id,type,name,Integer.valueOf(data[3]),state,point);
 				athletes.add(sprinter);				
 			}
-			else if (test.getType().equals("super")) {
-				SuperAthletes superAthletes = new SuperAthletes(id,type,name,age,state,point);
+			else if (test.getType().equals("super")&& valid&& dup) {
+				SuperAthletes superAthletes = new SuperAthletes(id,type,name,Integer.valueOf(data[3]),state,point);
 				athletes.add(superAthletes);				
 			}	
 			next = input.readLine();
 		}
 	input.close();
-	return athletesData;
+	return athletes;
 	}
 }
