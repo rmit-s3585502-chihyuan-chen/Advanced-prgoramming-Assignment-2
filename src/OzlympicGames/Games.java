@@ -27,7 +27,7 @@ public class Games {
 	}
 	public ArrayList<Athletes> loadAthletes(ArrayList<Athletes> athletes){
 		this.athletes = athletes;
-		return athletes;				
+		return athletes;
 	}
 	
 	public Athletes getaddAthletes(){

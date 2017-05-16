@@ -29,6 +29,7 @@ public class Ozlympic extends Application {
 	public static ArrayList<Athletes> athletes = new ArrayList<Athletes>(); 
 	public static ArrayList<Official> officials = new ArrayList<Official>();
 	public static ArrayList<String> history = new ArrayList<String>(); 
+	public static ArrayList<String> history2 = new ArrayList<String>(); 
 	public static ArrayList<Athletes> tempAthletes = new ArrayList<Athletes>(); 
 	public static ArrayList<Athletes> addAthletes = new ArrayList<Athletes>();
 	public static boolean gameSelect = false; 
@@ -96,8 +97,8 @@ public class Ozlympic extends Application {
 		FileWriter writer = null;
 		try {
 			writer = new FileWriter("gameResults.txt", true);
-			for (int i = 0; i < Ozlympic.history.size(); i++){
-			writer.write(Ozlympic.history.get(i));
+			for (int i = 0; i < Ozlympic.history2.size(); i++){
+			writer.write(Ozlympic.history2.get(i));
 			}
 			writer.write("-------------------------------------");
 			writer.write(System.getProperty("line.separator"));
