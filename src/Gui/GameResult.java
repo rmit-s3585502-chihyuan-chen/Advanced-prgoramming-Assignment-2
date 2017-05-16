@@ -41,7 +41,6 @@ public class GameResult {
 	@FXML
 	private void initialize() {
 		String recordDate=null;
-		String recordLine=null;
 		String record = null;
 		String date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
 		int date2 = Integer.valueOf(new SimpleDateFormat("SSS").format(new Date()));
@@ -61,6 +60,8 @@ public class GameResult {
 		}
 		recordDate=(Ozlympic.gameinfo.getGameId()+", "+Ozlympic.gameinfo.getOfficial().getId()+", "+date+"."+new DecimalFormat("#").format(date2/10));
 		Ozlympic.history.add(recordDate);
+		Ozlympic.history2.clear();
+		Ozlympic.history2.add(recordDate);
 		showResult.appendText(Ozlympic.gameinfo.getGameId()+","+"\t"+Ozlympic.gameinfo.getOfficial().getId()+","+"\t"+date+"."+new DecimalFormat("#").format(date2/10));
 		
 		getresult(Ozlympic.gameinfo.GameType(), result, ranklist, record);				
@@ -77,6 +78,9 @@ public class GameResult {
 		}
 		Ozlympic.history.add("\n");
 		Ozlympic.history.add("\n");
+		Ozlympic.history2.add("\n");
+		Ozlympic.history2.add("\n");
+		Ozlympic.saving();
 	}
 
 	private void getotherresult(int[] result, int[] ranklist, String record) {
@@ -88,24 +92,28 @@ public class GameResult {
 					record =("\n"+Ozlympic.addAthletes.get(i).getId()+", "+result[i]+", 5");
 					showResult.appendText(record);
 					Ozlympic.history.add(record);
+					Ozlympic.history2.add(record);
 				}
 				else if (j==2){
 					Ozlympic.addAthletes.get(i).setPoint(2);
 					record =("\n"+Ozlympic.addAthletes.get(i).getId()+", "+result[i]+", 2");
 					showResult.appendText(record);
 					Ozlympic.history.add(record);
+					Ozlympic.history2.add(record);
 				}
 				else if (j==3){
 					Ozlympic.addAthletes.get(i).setPoint(1);
 					record =("\n"+Ozlympic.addAthletes.get(i).getId()+", "+result[i]+", 1");
 					showResult.appendText(record);
 					Ozlympic.history.add(record);
+					Ozlympic.history2.add(record);
 				}
 				else{
 					Ozlympic.addAthletes.get(i).setPoint(0);
 					record =("\n"+Ozlympic.addAthletes.get(i).getId()+", "+result[i]+", 0");
 					showResult.appendText(record);
 					Ozlympic.history.add(record);
+					Ozlympic.history2.add(record);
 				}
 			}
 				}
@@ -124,24 +132,28 @@ public class GameResult {
 					record =("\n"+Ozlympic.addAthletes.get(i).getId()+", "+result2[i]/10+", 5");
 					showResult.appendText(record);
 					Ozlympic.history.add(record);
+					Ozlympic.history2.add(record);
 				}
 				else if (j==2){
 					Ozlympic.addAthletes.get(i).setPoint(2);
 					record =("\n"+Ozlympic.addAthletes.get(i).getId()+", "+result2[i]/10+", 2");
 					showResult.appendText(record);
 					Ozlympic.history.add(record);
+					Ozlympic.history2.add(record);
 				}
 				else if (j==3){
 					Ozlympic.addAthletes.get(i).setPoint(1);
 					record =("\n"+Ozlympic.addAthletes.get(i).getId()+", "+result2[i]/10+", 1");
 					showResult.appendText(record);
 					Ozlympic.history.add(record);
+					Ozlympic.history2.add(record);
 				}
 				else{
 					Ozlympic.addAthletes.get(i).setPoint(0);
 					record =("\n"+Ozlympic.addAthletes.get(i).getId()+", "+result2[i]/10+", 0");
 					showResult.appendText(record);
 					Ozlympic.history.add(record);
+					Ozlympic.history2.add(record);
 				}
 			}
 				}

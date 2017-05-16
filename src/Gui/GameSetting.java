@@ -20,7 +20,11 @@ import Data.Swimmers;
 import Data.Sprinters;
 import Data.SuperAthletes;
 import OzlympicGames.Ozlympic;
-import Exception.ExceptionAlert;
+import Exception.GameFullException;
+import Exception.NoRefereeException;
+import Exception.OverRefereeException;
+import Exception.TooFewAthleteException;
+
 import java.io.IOException;
 import javafx.application.*;
 import javafx.collections.FXCollections;
@@ -82,7 +86,6 @@ private void back(ActionEvent event) throws IOException {
 	}
 @FXML
 private void exit() {
-	Ozlympic.saving();
 	Stage exitStage = (Stage) exit.getScene().getWindow();
     exitStage.close();
 }
@@ -114,20 +117,19 @@ private void List(){
 }
 @FXML
 private void showSelection() {
-
 	participants.setItems(participant);
 	chiefOfficials.setItems(chiefOfficer);
 	
 }
 @FXML
-private void Next(ActionEvent event) throws ExceptionAlert {
+private void Next(ActionEvent event) throws Exception {
 		try {
 		if(officerSetting == false) {
-			throw new ExceptionAlert("Please assign an Officier");
+			throw new NoRefereeException();
 		} else { 
 			try {
 				if(participant.size() < 4) {
-						throw new ExceptionAlert("Each game should have 4 or more athletes");					
+						throw new TooFewAthleteException();				
 					} else {				
 						for(int i =0;i < Ozlympic.athletes.size(); i++) {
 							Athletes players = Ozlympic.athletes.get(i);	
@@ -147,17 +149,18 @@ private void Next(ActionEvent event) throws ExceptionAlert {
 					thisStage.setScene(menuPageScene);
 					thisStage.show();
 					
-			} catch (Exception ExceptionAlert) {
+			} catch (Exception Exception) {
 					} 
 		}
-	} catch (Exception ExceptionAlert) {	
+	} catch (Exception Exception) {	
 	}
 }
 @FXML
 private void assignOfficier(){		
 	try {
 		if(officerSetting == true) {
-			throw new ExceptionAlert("Each game only can have one officer"); } 
+			throw new OverRefereeException(); 
+			} 
 		else {				
 			String assignOfficer = (String) officials.getSelectionModel().getSelectedItem();
 				
@@ -191,7 +194,8 @@ private void getAssignOfficer() {
 private void addParticipant() {
 	try {
 		if(participant.size() > 7) {
-			throw new ExceptionAlert("Each game can only have 4 to 8 participants"); } 
+			throw new GameFullException(); 
+			} 
 		else {				
 			String addPlayers = (String) availableAthletes.getSelectionModel().getSelectedItem();
 			if(addPlayers != null) {

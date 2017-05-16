@@ -77,7 +77,6 @@ public class StartGame {
 	}
 	@FXML
 	private void exit(ActionEvent event) throws IOException {
-		Ozlympic.saving();
 		Stage exitStage = (Stage) exit.getScene().getWindow();
 		exitStage.close();
 	}
