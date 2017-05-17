@@ -21,7 +21,3 @@ Oz0020, super, Zhou, 30, ACT
 Oz0021, officer, Jeffery, 25, WA
 Oz0022, officer, Marco, 28, VIC
 Oz0023, officer, Don, 32, NSW
-, sprinter, Mary, 35, VIC
-Oz0023, officer, Don, 32, NSW
-Oz0020, super, Zhou, 30, ACT
-Oz1234, , Beck, 30, TAS 

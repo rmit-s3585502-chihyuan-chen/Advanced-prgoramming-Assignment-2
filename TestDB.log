@@ -1,0 +1,3 @@
+/*C2*/SET SCHEMA PUBLIC
+drop table barcodes if exists
+create table participant (id varchar(20),type varchar(20),name varchar(20),age integer,state varchar(20),point integer)
