@@ -8,7 +8,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class GameFullException extends Exception {
+public class GameFullException extends Exception { //inspect athletes number which is over 8
 	public GameFullException() {
 		Stage window = new Stage();
 		window.initModality(Modality.APPLICATION_MODAL);

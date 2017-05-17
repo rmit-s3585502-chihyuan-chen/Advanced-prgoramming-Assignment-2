@@ -8,7 +8,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class TooFewAthleteException extends Exception {
+public class TooFewAthleteException extends Exception { //inspect number of athletes which is lower than 4
 	public TooFewAthleteException() {
 		Stage window = new Stage();
 		window.initModality(Modality.APPLICATION_MODAL);

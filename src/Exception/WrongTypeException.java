@@ -8,7 +8,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class WrongTypeException extends Exception {
+public class WrongTypeException extends Exception { //wrong game type
 	public WrongTypeException() {
 		Stage window = new Stage();
 		window.initModality(Modality.APPLICATION_MODAL);

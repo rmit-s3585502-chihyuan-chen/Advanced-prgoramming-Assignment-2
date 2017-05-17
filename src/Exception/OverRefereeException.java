@@ -8,7 +8,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class OverRefereeException extends Exception{
+public class OverRefereeException extends Exception{ //inspect add too much official
 	public OverRefereeException() {
 		Stage window = new Stage();
 		window.initModality(Modality.APPLICATION_MODAL);
