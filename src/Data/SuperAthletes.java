@@ -17,7 +17,7 @@ public class SuperAthletes extends Athletes {
 	public int compete(String GameType) {
 		int max=0;//set the max game time
         int min=0;//set the max game time
-        if(GameType == "Running") {
+        if(GameType == "Running") {  //use game type to assign the game to super athletes to compete
 			max = 200;
 			min = 100;
 		} else if (GameType =="Cycling") {

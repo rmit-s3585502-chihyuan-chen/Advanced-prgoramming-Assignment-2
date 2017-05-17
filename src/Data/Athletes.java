@@ -14,7 +14,7 @@ public class Athletes {
 	private int age;
 	private String state;
 	private int point;
-	public Athletes(String id, String type,String name, int age, String state,int point) {
+	public Athletes(String id, String type,String name, int age, String state,int point) {// set attributes of athletes
 		this.id = id;
 		this.type = type;
 		this.name = name;
@@ -22,27 +22,27 @@ public class Athletes {
 		this.state = state;
 		this.point = point;
 	}
-	public int compete(String superName) {
+	public int compete(String superName) { //set compete method to subclass
 		return 0;
 	}
 	
-	public String getId() {
+	public String getId() { //get Athlete id
 		return id;
 	}
 	
-	public String getName() {
+	public String getName() {//get Athlete name
 		return name;
 	}
 	
-	public int getAge() {
+	public int getAge() { //get Athlete age
 		return age;
 	}
 
-	public int getPoint() {
+	public int getPoint() { //get Athlete point
 		return point;
 	}
 	
-	public String getState() {
+	public String getState() { //get Athlete state
 		return state;
 	}
 
