@@ -20,17 +20,17 @@ public class Games {
 	private static int GameRound;
 	private Athletes  player;
 	private Official offical;
-	public ArrayList<Athletes> athletes= new ArrayList<Athletes>();
+	public ArrayList<Athletes> athletes= new ArrayList<Athletes>(); //assign game id and game officer
 	public void playGame (ArrayList<Athletes> addAthletes, Games gameinfo, ArrayList<Official>official){
 		this.setGameId(GameId);		
 		String superName = GameType;
 	}
-	public ArrayList<Athletes> loadAthletes(ArrayList<Athletes> athletes){
+	public ArrayList<Athletes> loadAthletes(ArrayList<Athletes> athletes){ //load athletes
 		this.athletes = athletes;
 		return athletes;
 	}
 	
-	public Athletes getaddAthletes(){
+	public Athletes getaddAthletes(){ //get player list
 		return player;
 	}
 	public String GameType() {	

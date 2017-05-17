@@ -22,7 +22,7 @@ import Data.Swimmers;
 
 public class ReadFile {
 	BufferedReader input;
-	public void ReadFile() {
+	public void ReadFile() { //import txt file
 		try {
 			input = new BufferedReader(new FileReader("participant.txt"));
 		} catch (Exception e) {
@@ -30,7 +30,7 @@ public class ReadFile {
 		}
 	}
 	
-	public ArrayList<Official> loadOfficersTxt(ArrayList<Official> officials) throws IOException {
+	public ArrayList<Official> loadOfficersTxt(ArrayList<Official> officials) throws IOException { //load officer from txt file
         String next = input.readLine();
         while (next != null) {
             String[] data = next.split(", ");
@@ -58,7 +58,7 @@ public class ReadFile {
 		return officials;	
 		}
          
-	public ArrayList<Athletes> loadAthletesTxt (ArrayList<Athletes> athletes) throws IOException {
+	public ArrayList<Athletes> loadAthletesTxt (ArrayList<Athletes> athletes) throws IOException {//load players from txt file
 		String next = input.readLine();
         while (next != null) {
             String[] data = next.split(", ");

@@ -8,6 +8,10 @@ import java.io.IOException;
  * @Description Ozlympic
  */
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -22,6 +26,7 @@ import Data.Official;
 import Data.Athletes;
 import Data.Cyclists;
 import Data.Swimmers;
+import Data.TestDB;
 import Data.Sprinters;
 import Data.SuperAthletes;
 
@@ -33,8 +38,8 @@ public class Ozlympic extends Application {
 	public static ArrayList<Athletes> tempAthletes = new ArrayList<Athletes>(); 
 	public static ArrayList<Athletes> addAthletes = new ArrayList<Athletes>();
 	public static boolean gameSelect = false; 
+	public static TestDB loadDB= new TestDB();
 	public static Games gameinfo = new Games();
-	static PrintWriter out = null;
 	public static Stage primaryStage;
 	public void start(Stage primaryStage) {
 		try {
@@ -49,11 +54,13 @@ public class Ozlympic extends Application {
 		}
 	}
 
-	public static void main(String[] args) {
-		loadingTxt();
+	public static void main(String[] args) { //drive the game 
+		loadDB.loadData();
+		if(Ozlympic.athletes.size()==0){
+		loadingTxt();}
 		launch(args);
 	}
-	public static void loadingTxt() {
+	public static void loadingTxt() { //read txt file
 		try {	
 			ReadFile loading = new ReadFile();
 			loading.ReadFile();	
@@ -64,15 +71,7 @@ public class Ozlympic extends Application {
 			System.out.println("Cannot load txt file");
 			}	
 		}
-
-	static void displayGames(ArrayList<Athletes> comp, ArrayList<Athletes> loadArray, ArrayList<Official> official, ArrayList<String> history) {
-		for (int i = 0; i < history.size(); i++) {
-			String test = history.get(i);
-		System.out.println(test);
-		} 
-	}
-	
-	public static Games selectGame(int selection) {
+	public static Games selectGame(int selection) { //switch game type
 		Games newGame = new Games();
 		switch(selection) {
 			case 1: newGame = new Swimming();
@@ -93,7 +92,7 @@ public class Ozlympic extends Application {
 		return newGame;
 	}
 	
-	public static void saving(){
+	public static void saving(){ //store data to txt
 		FileWriter writer = null;
 		try {
 			writer = new FileWriter("gameResults.txt", true);
@@ -102,10 +101,12 @@ public class Ozlympic extends Application {
 			}
 			writer.write("-------------------------------------");
 			writer.write(System.getProperty("line.separator"));
-			writer.close();// flushes the stream.
+			writer.close();
 		} catch (IOException e) {
 			System.err.println("File cannot be created, or cannot be opened");
 			System.exit(0);
 		}
 	}
+		
+		    
 }
