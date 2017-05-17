@@ -42,7 +42,7 @@ public class StartGame {
 		displayEvent();
 		}
 	@FXML
-	private void displayEvent(){
+	private void displayEvent(){ //show the information of the game that will start 
 		if(Ozlympic.gameSelect==true){
 		gameInfo.appendText("The official is ");
 		gameInfo.appendText(Ozlympic.gameinfo.getOfficial().getName() + "\n");
@@ -55,7 +55,7 @@ public class StartGame {
 	}
 
 	@FXML
-	private void startGame(ActionEvent event) throws IOException {
+	private void startGame(ActionEvent event) throws IOException { //lead user to next step
 		Parent alertPage =FXMLLoader.load(getClass().getResource("GameResult.fxml"));
 		Scene alertPageScene = new Scene(alertPage);
 		Stage thisStage = (Stage) ((Node) event.getSource()).getScene().getWindow();

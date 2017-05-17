@@ -15,6 +15,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
+
 import OzlympicGames.Ozlympic;
 import OzlympicGames.Games;
 import OzlympicGames.Cycling;
@@ -23,6 +24,7 @@ import OzlympicGames.Swimming;
 import Data.Official;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -31,6 +33,7 @@ import java.util.Date;
 import Data.Athletes;
 import Data.Cyclists;
 import Data.Swimmers;
+import Data.TestDB;
 import Data.Sprinters;
 import Data.SuperAthletes;
 public class GameResult {
@@ -39,7 +42,7 @@ public class GameResult {
 	@FXML
 	private TextArea showResult;
 	@FXML
-	private void initialize() {
+	private void initialize() { //conduct each athlete who was selected by user to compete the game automatically and show result
 		String recordDate=null;
 		String record = null;
 		String date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
@@ -68,7 +71,7 @@ public class GameResult {
 		}
 		
 	
-	private void getresult(String gameType, int[] result, int[] ranklist, String record) {
+	private void getresult(String gameType, int[] result, int[] ranklist, String record) { // get result and store into history list
 		double [] result2 = new double [Ozlympic.addAthletes.size()];
 		if (gameType.equals("Running")){
 			getrunresult(result2, result, ranklist, record);
@@ -81,9 +84,11 @@ public class GameResult {
 		Ozlympic.history2.add("\n");
 		Ozlympic.history2.add("\n");
 		Ozlympic.saving();
+	
+			 
 	}
 
-	private void getotherresult(int[] result, int[] ranklist, String record) {
+	private void getotherresult(int[] result, int[] ranklist, String record) {//sort rank of athletes to give them points
 		for (int j = 1; j < (Ozlympic.addAthletes.size()+1);j++){
 			for (int i = 0; i<Ozlympic.addAthletes.size(); i++){
 				if (ranklist[i]==j){
@@ -120,7 +125,7 @@ public class GameResult {
 			}
 	}
 
-	private void getrunresult(double[] result2, int[] result, int[] ranklist, String record) {
+	private void getrunresult(double[] result2, int[] result, int[] ranklist, String record) { //sort rank of athletes to give them points and store double type ofrunning result 
 			for (int i = 0; i<Ozlympic.addAthletes.size(); i++){
 				result2[i]=result[i];
 			}
@@ -154,6 +159,7 @@ public class GameResult {
 					showResult.appendText(record);
 					Ozlympic.history.add(record);
 					Ozlympic.history2.add(record);
+					
 				}
 			}
 				}
@@ -161,7 +167,7 @@ public class GameResult {
 		}
 
 	@FXML
-	private void home(ActionEvent event) throws IOException {
+	private void home(ActionEvent event) throws IOException {//back to home
 		Ozlympic.gameSelect = false;
 		Ozlympic.tempAthletes.clear();
 		Ozlympic.addAthletes.clear();

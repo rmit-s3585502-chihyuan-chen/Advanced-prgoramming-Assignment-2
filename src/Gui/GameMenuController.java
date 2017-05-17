@@ -22,7 +22,7 @@ public class GameMenuController  {
 	@FXML
 	private Button exit;
 	@FXML
-	private void GameType(ActionEvent event) throws IOException {
+	private void GameType(ActionEvent event) throws IOException { //button event to lead user to select game type menu
 		Parent alertPage =FXMLLoader.load(getClass().getResource("GameType.fxml"));
 		Scene alertPageScene = new Scene(alertPage);
 		Stage thisStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -30,7 +30,7 @@ public class GameMenuController  {
 		thisStage.show();		
 	}
 	@FXML
-	private void displayresult(ActionEvent event) throws IOException {
+	private void displayresult(ActionEvent event) throws IOException { //button event to lead user to view past game results
 		Parent alertPage =FXMLLoader.load(getClass().getResource("displayResult.fxml"));
 		Scene alertPageScene = new Scene(alertPage);
 		Stage thisStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -38,7 +38,7 @@ public class GameMenuController  {
 		thisStage.show();		
 	}
 	@FXML
-	private void displayPoint(ActionEvent event) throws IOException {
+	private void displayPoint(ActionEvent event) throws IOException { //button event to lead user to view all points of athletes
 		Parent alertPage =FXMLLoader.load(getClass().getResource("DisplayPoint.fxml"));
 		Scene alertPageScene = new Scene(alertPage);
 		Stage thisStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -46,7 +46,7 @@ public class GameMenuController  {
 		thisStage.show();		
 	}
 	@FXML
-	private void exit() {
+	private void exit() { //leave the system
 		Stage exitStage = (Stage) exit.getScene().getWindow();
 	    exitStage.close();
 	}

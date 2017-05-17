@@ -16,13 +16,13 @@ import Data.Athletes;
 import OzlympicGames.Games;
 import OzlympicGames.Ozlympic;
 
-public class displayAll {
+public class displayAll { //display all game result to control fxml to show result
 	@FXML
 	private Button exit;
 	@FXML
 	private TextArea dataList;
 	@FXML
-	private void initialize() { //Prints out stats of all athletes
+	private void initialize() { //show all athlete points and info 
 		dataList.setText("");
 		for(int i = 0; i < Ozlympic.athletes.size(); i++) {			
 			dataList.appendText("====================\n");
@@ -36,12 +36,12 @@ public class displayAll {
 		}
 }
 	@FXML
-	private void exit() {
+	private void exit() { //leave the system
 		Stage exitStage = (Stage) exit.getScene().getWindow();
 	    exitStage.close();
 	}
 	@FXML
-	private void home(ActionEvent event) throws IOException {
+	private void home(ActionEvent event) throws IOException { //back to main menu
 		Parent homepage =FXMLLoader.load(getClass().getResource("GameMenu.fxml"));
 		Scene homePageScene = new Scene(homepage);
 		Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();

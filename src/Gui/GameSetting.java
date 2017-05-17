@@ -65,7 +65,7 @@ private ObservableList<String> officers =FXCollections.observableArrayList();
 private ObservableList<String> chiefOfficer =FXCollections.observableArrayList();
 private boolean officerSetting;
 @FXML
-private void home(ActionEvent event) throws IOException {
+private void home(ActionEvent event) throws IOException { //back to home
 	athleteList.clear();
 	participant.clear();
 	Ozlympic.gameSelect=false;
@@ -77,20 +77,20 @@ private void home(ActionEvent event) throws IOException {
 	homeStage.show();		
 }
 @FXML
-private void back(ActionEvent event) throws IOException {
+private void back(ActionEvent event) throws IOException { //back to last page
 	Parent back =FXMLLoader.load(getClass().getResource("GameType.fxml"));
 	Scene  backPage = new Scene(back);
 	Stage  backStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 	backStage.setScene(backPage);
 	backStage.show();	
 	}
-@FXML
-private void exit() {
+@FXML 
+private void exit() { //leave the system
 	Stage exitStage = (Stage) exit.getScene().getWindow();
     exitStage.close();
 }
 @FXML
-private void initialize(){
+private void initialize(){ //load athletes data and officer data
 	List();
 	availableAthletes.setItems(athleteList);
 	availableAthletes.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
@@ -99,7 +99,7 @@ private void initialize(){
 	
 }
 @FXML
-private void List(){	 	
+private void List(){	 	//use list to store athletes and officer list
 	
 	for(int i = 0; i < Ozlympic.tempAthletes.size(); i++) {			
 		Athletes players = Ozlympic.tempAthletes.get(i);					
@@ -116,19 +116,19 @@ private void List(){
 	
 }
 @FXML
-private void showSelection() {
+private void showSelection() {//show users selection of athletes and officer
 	participants.setItems(participant);
 	chiefOfficials.setItems(chiefOfficer);
 	
 }
 @FXML
-private void Next(ActionEvent event) throws Exception {
+private void Next(ActionEvent event) throws Exception { //confirm the game setting
 		try {
 		if(officerSetting == false) {
 			throw new NoRefereeException();
 		} else { 
 			try {
-				if(participant.size() < 4) {
+				if(participant.size() < 4) { //inspect the number of participants
 						throw new TooFewAthleteException();				
 					} else {				
 						for(int i =0;i < Ozlympic.athletes.size(); i++) {
@@ -156,7 +156,7 @@ private void Next(ActionEvent event) throws Exception {
 	}
 }
 @FXML
-private void assignOfficier(){		
+private void assignOfficier(){	//add officer 	
 	try {
 		if(officerSetting == true) {
 			throw new OverRefereeException(); 
@@ -179,7 +179,7 @@ private void assignOfficier(){
 } catch(Exception ExceptionAlert) {
 	}
 }
-private void getAssignOfficer() {
+private void getAssignOfficer() { //show assign officer
 	for(int i =0;i < Ozlympic.officials.size(); i++) {		
 		Official getofficer = Ozlympic.officials.get(i);	
 		String OfficerName = getofficer.getName();					
@@ -191,7 +191,7 @@ private void getAssignOfficer() {
 		}
 	}
 @FXML
-private void addParticipant() {
+private void addParticipant() { //add who will compete the game
 	try {
 		if(participant.size() > 7) {
 			throw new GameFullException(); 

@@ -37,7 +37,7 @@ public class GameTypeController {
 	@FXML
 	private Button exit;
 	@FXML
-	private void swimming(ActionEvent event) throws IOException{
+	private void swimming(ActionEvent event) throws IOException{ //use type to get different athletes data
 		Ozlympic.tempAthletes.clear();
 		Games newGames = Ozlympic.selectGame(1);
 		ArrayList<Athletes> loadAthletes = new ArrayList<Athletes>();
@@ -51,7 +51,7 @@ public class GameTypeController {
 		SetStage.show();	
 	}
 	@FXML
-	private void cycling(ActionEvent event) throws IOException{
+	private void cycling(ActionEvent event) throws IOException{//use type to get different athletes data
 		Ozlympic.tempAthletes.clear();
 		Games newGames = Ozlympic.selectGame(2);
 		ArrayList<Athletes> loadAthletes = new ArrayList<Athletes>();
@@ -65,7 +65,7 @@ public class GameTypeController {
 		SetStage.show();	
 	}
 	@FXML
-	private void running(ActionEvent event) throws IOException{
+	private void running(ActionEvent event) throws IOException{//use type to get different athletes data
 		Ozlympic.tempAthletes.clear();
 		Games newGames = Ozlympic.selectGame(3);
 		ArrayList<Athletes> loadAthletes = new ArrayList<Athletes>();
