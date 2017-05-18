@@ -44,11 +44,11 @@ public class GameTypeController {
 		loadAthletes = Ozlympic.athletes;
 		Ozlympic.tempAthletes =newGames.loadAthletes(loadAthletes);
 		Ozlympic.gameinfo = newGames;
-		Parent gameType =FXMLLoader.load(getClass().getResource("/Gui/GameSet.fxml"));
-		Scene gameTypePage= new Scene(gameType);
-		Stage SetStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-		SetStage.setScene(gameTypePage);
-		SetStage.show();	
+		Parent swimmingType =FXMLLoader.load(getClass().getResource("/Gui/GameSet.fxml"));
+		Scene swimmingTypePage= new Scene(swimmingType);
+		Stage swimmingStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		swimmingStage.setScene(swimmingTypePage);
+		swimmingStage.show();	
 	}
 	@FXML
 	private void cycling(ActionEvent event) throws IOException{//use type to get different athletes data
@@ -58,11 +58,11 @@ public class GameTypeController {
 		loadAthletes = Ozlympic.athletes;
 		Ozlympic.tempAthletes =newGames.loadAthletes(loadAthletes);
 		Ozlympic.gameinfo = newGames;
-		Parent gameType =FXMLLoader.load(getClass().getResource("/Gui/GameSet.fxml"));
-		Scene gameTypePage= new Scene(gameType);
-		Stage SetStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-		SetStage.setScene(gameTypePage);
-		SetStage.show();	
+		Parent cyclingType =FXMLLoader.load(getClass().getResource("/Gui/GameSet.fxml"));
+		Scene cyclingTypePage= new Scene(cyclingType);
+		Stage  cyclingStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		 cyclingStage.setScene(cyclingTypePage);
+		 cyclingStage.show();	
 	}
 	@FXML
 	private void running(ActionEvent event) throws IOException{//use type to get different athletes data
@@ -72,19 +72,19 @@ public class GameTypeController {
 		loadAthletes = Ozlympic.athletes;
 		Ozlympic.tempAthletes =newGames.loadAthletes(loadAthletes);
 		Ozlympic.gameinfo = newGames;
-		Parent gameType =FXMLLoader.load(getClass().getResource("/Gui/GameSet.fxml"));
-		Scene gameTypePage= new Scene(gameType);
-		Stage SetStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-		SetStage.setScene(gameTypePage);
-		SetStage.show();	
+		Parent runningType =FXMLLoader.load(getClass().getResource("/Gui/GameSet.fxml"));
+		Scene runningTypePage= new Scene(runningType);
+		Stage runningStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		runningStage.setScene(runningTypePage);
+		runningStage.show();	
 	}
 	@FXML
-	private void exit() {
+	private void exit() {//allow user to leave the system
 		Stage exitStage = (Stage) exit.getScene().getWindow();
 	    exitStage.close();
 	}
 	@FXML
-	private void home(ActionEvent event) throws IOException {
+	private void home(ActionEvent event) throws IOException { //allow user to back to main menu
 		Parent homepage =FXMLLoader.load(getClass().getResource("GameMenu.fxml"));
 		Scene homePageScene = new Scene(homepage);
 		Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();

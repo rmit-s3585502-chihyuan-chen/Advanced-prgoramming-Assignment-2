@@ -39,10 +39,10 @@ public class StartGame {
 	private Button exit;
 	@FXML
 	private void initialize() {
-		displayEvent();
+		displayInfo();
 		}
 	@FXML
-	private void displayEvent(){ //show the information of the game that will start 
+	private void displayInfo(){ //show the information of the game that will start 
 		if(Ozlympic.gameSelect==true){
 		gameInfo.appendText("The official is ");
 		gameInfo.appendText(Ozlympic.gameinfo.getOfficial().getName() + "\n");
@@ -55,15 +55,15 @@ public class StartGame {
 	}
 
 	@FXML
-	private void startGame(ActionEvent event) throws IOException { //lead user to next step
-		Parent alertPage =FXMLLoader.load(getClass().getResource("GameResult.fxml"));
-		Scene alertPageScene = new Scene(alertPage);
-		Stage thisStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-		thisStage.setScene(alertPageScene);
-		thisStage.show();
+	private void startGame(ActionEvent event) throws IOException { //lead user to real time simulation page
+		Parent animationPage =FXMLLoader.load(getClass().getResource("Animation.fxml"));
+		Scene animationScene = new Scene(animationPage);
+		Stage animationStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		animationStage.setScene(animationScene);
+		animationStage.show();
 	}
 	@FXML
-	private void home(ActionEvent event) throws IOException {
+	private void home(ActionEvent event) throws IOException {//restore default setting and lead user to main menu
 		gameInfo.clear();
 		Games.ReduceGameRound(Games.getGameRound());
 		Ozlympic.gameSelect=false;
@@ -76,7 +76,7 @@ public class StartGame {
 		homeStage.show();		
 	}
 	@FXML
-	private void exit(ActionEvent event) throws IOException {
+	private void exit(ActionEvent event) throws IOException {//lead user to leave the system
 		Stage exitStage = (Stage) exit.getScene().getWindow();
 		exitStage.close();
 	}

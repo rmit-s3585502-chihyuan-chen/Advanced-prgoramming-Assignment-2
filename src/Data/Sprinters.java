@@ -14,7 +14,7 @@ public class Sprinters extends Athletes{
 		super(id,type,name, age, state,point);
 	}
 	
-	//Restrict time and run the sprint and set parameter id to connect with driver
+	//Restrict time and set parameter game type to check athlete type to compete which game
 	public int compete(String GameType) {
 		int max=200; //set the max game time 
 	    int min=100; //set the min game time 

@@ -6,10 +6,13 @@ package Data;
  * @Description TestDB
  */
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -34,10 +37,10 @@ import Data.Swimmers;
 public class TestDB {
     //create connection with database
 	private Connection connect() {     
-    String url = "jdbc:sqlite:participant.sqlite";
+    String path = "jdbc:sqlite:participant.sqlite";
     Connection connecting = null;
         try {
-            connecting = DriverManager.getConnection(url); 
+            connecting = DriverManager.getConnection(path); 
             
         	
         } catch (SQLException e) {
@@ -60,8 +63,8 @@ public class TestDB {
             int age = getData.getInt("age");
             String state = getData.getString("state");
             int point = getData.getInt("point");
-            Athletes participantDB = new Athletes(id, type,name, age, state, point); //use list to store
-            if (participantDB.getType().equals("cyclist")) {                        //use type to find particular data 				
+            Athletes participantDB = new Athletes(id, type,name, age, state, point); //create a role which has same attributes that db's table has
+            if (participantDB.getType().equals("cyclist")) {          //use type to be a key to find the particular data from database and store into ArrayList				
             Cyclists cyclistsDB = new Cyclists(id, type,name, age, state, point);
             Ozlympic.athletes.add(cyclistsDB );				
                        			}
@@ -88,6 +91,7 @@ public class TestDB {
         	
         } 
     }
-    
 
+
+	
 }

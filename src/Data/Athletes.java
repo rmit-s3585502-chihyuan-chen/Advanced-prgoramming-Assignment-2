@@ -8,13 +8,13 @@ package Data;
 
 
 public class Athletes {
-	private String id;
-	private String type;
-	private String name;
-	private int age;
-	private String state;
-	private int point;
-	public Athletes(String id, String type,String name, int age, String state,int point) {// set attributes of athletes
+	private String id;    //define id is string value
+	private String type;  //define game type is string value
+	private String name;  //define name is string value
+	private int age;      //define age is integer value
+	private String state; //define state is string value
+	private int point;    //define point is integer value
+	public Athletes(String id, String type,String name, int age, String state,int point) {// set all attributes of athletes
 		this.id = id;
 		this.type = type;
 		this.name = name;
@@ -22,55 +22,55 @@ public class Athletes {
 		this.state = state;
 		this.point = point;
 	}
-	public int compete(String superName) { //set compete method to subclass
+	public int compete(String superName) { //set compete method to let subclass to run the game
 		return 0;
 	}
 	
-	public String getId() { //get Athlete id
+	public String getId() { //get id
 		return id;
 	}
 	
-	public String getName() {//get Athlete name
+	public String getName() {//get name
 		return name;
 	}
 	
-	public int getAge() { //get Athlete age
+	public int getAge() { //get age
 		return age;
 	}
 
-	public int getPoint() { //get Athlete point
+	public int getPoint() { //get point
 		return point;
 	}
 	
-	public String getState() { //get Athlete state
+	public String getState() { //get state
 		return state;
 	}
 
-	public void setState(String state) {
+	public void setState(String state) { //set state
 		this.state = state;
 	}
 
-	public void setId(String id) {
+	public void setId(String id) { //set id
 		this.id = id;
 	}
 	
-	public void setName(String name) {
+	public void setName(String name) { //set name
 		this.name = name;
 	}
 
-	public void setAge(int age) {
+	public void setAge(int age) { //set age
 		this.age = age;
 	}	
 	
-	public void setPoint(int i) {
+	public void setPoint(int i) { //set point
 		point = point + i;
 	}
 	
-	public String getType() {
+	public String getType() {  //get the type of athletes
 		return type;
-	}
+	} 
 
-	public void setType(String type) {
+	public void setType(String type) { //set the type of athletes
 		this.type = type;
 	}
 }

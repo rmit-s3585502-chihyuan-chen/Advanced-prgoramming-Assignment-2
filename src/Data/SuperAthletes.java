@@ -13,7 +13,7 @@ public class SuperAthletes extends Athletes {
 		super(id,type,name, age, state,point);
 	}
 
-	//Restrict the record time and let SuperAthletes run Swimming and set parameter id to connect with driver
+	//Restrict time and set parameter game type to check athlete type to compete which game
 	public int compete(String GameType) {
 		int max=0;//set the max game time
         int min=0;//set the max game time

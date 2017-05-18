@@ -1,11 +1,12 @@
 package OzlympicGames;
-import java.io.BufferedReader;
+
 /**
  * @date 15.05.2017
  * @author You Hao s3583715
  * @version 1.0
  * @Description ReadFile
  */
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;

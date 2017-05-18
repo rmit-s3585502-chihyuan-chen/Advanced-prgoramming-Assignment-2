@@ -1,5 +1,10 @@
 package Exception;
-
+/**
+ * @date 14.05.2017
+ * @author You Hao s3583715
+ * @version 2.0
+ * @Description WrongTypeException
+ */
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -8,25 +13,25 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class WrongTypeException extends Exception { //wrong game type
-	public WrongTypeException() {
-		Stage window = new Stage();
-		window.initModality(Modality.APPLICATION_MODAL);
-		window.setMinWidth(320);
-		window.setMinHeight(120);
+public class WrongTypeException extends Exception { //wrong game type exception interface to show the error window
+	public WrongTypeException() {//set attributes of interface
+		Stage WrongType = new Stage();
+		WrongType.initModality(Modality.APPLICATION_MODAL);
+		WrongType.setMinWidth(320);
+		WrongType.setMinHeight(120);
 		
-		Label label = new Label();
-		label.setText("Type of the athlete is wrong!");
+		Label Wrong = new Label();
+		Wrong.setText("Type of the athlete is wrong!");
 		Button close = new Button("Close");
 		
-		close.setOnAction(e -> window.close());
+		close.setOnAction(e -> WrongType.close());
 		
 		VBox layout = new VBox(10);
-		layout.getChildren().addAll(label, close);
+		layout.getChildren().addAll(Wrong, close);
 		layout.setAlignment(Pos.CENTER);
 		
 		Scene scene = new Scene(layout);
-		window.setScene(scene);
-		window.showAndWait();
+		WrongType.setScene(scene);
+		WrongType.showAndWait();
 	}
 }

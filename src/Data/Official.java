@@ -24,51 +24,51 @@ public class Official{
 		   this.setState(state);
 		   this.setPoint(point);
 	   }
-	   public String getId() {
+	   public String getId() { //get officer id
 			return id;
 		}
 		
-		public String getName() {
+		public String getName() {//get officer name
 			return name;
 		}
 		
-		public int getAge() {
+		public int getAge() { //get officer age
 			return age;
 		}
 
-		public int getPoint() {
+		public int getPoint() {//get officer point
 			return point;
 		}
 		
-		public String getState() {
+		public String getState() { //get officer's state
 			return state;
 		}
 
-		public void setState(String state) {
+		public void setState(String state) { //set officer state
 			this.state = state;
 		}
 
-		public void setId(String id) {
+		public void setId(String id) { //set officer id
 			this.id = id;
 		}
 		
-		public void setName(String name) {
+		public void setName(String name) {// set officer name
 			this.name = name;
 		}
 
-		public void setAge(int age) {
+		public void setAge(int age) { //set officer age
 			this.age = age;
 		}	
 		
-		public void setPoint(int i) {
+		public void setPoint(int i) {//set officer point
 			point = point + i;
 		}
 		
-		public String getType() {
+		public String getType() { //get officer type
 			return type;
 		}
 
-		public void setType(String type) {
+		public void setType(String type) {//set officer type
 			this.type = type;
 		}
 }

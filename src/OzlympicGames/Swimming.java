@@ -22,7 +22,7 @@ public class Swimming extends Games {
 		setGameId("S0"+getGameRound());
 	}
 
-public ArrayList<Athletes> loadAthletes(ArrayList<Athletes> athletes){ 
+public ArrayList<Athletes> loadAthletes(ArrayList<Athletes> athletes){ //load data list to store data which contains swimmers and suepratheletes
 		ArrayList<Athletes> playersData = new ArrayList<Athletes>();
 		for (int i=0; i < athletes.size(); i++) {			
 			Athletes players = athletes.get(i);		

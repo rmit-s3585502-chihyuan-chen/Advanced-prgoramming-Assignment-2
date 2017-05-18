@@ -1,13 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.Controller">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.Controller">
    <children>
-      <Circle fx:id="circle" fill="DODGERBLUE" layoutX="50.0" layoutY="65.0" radius="36.0" stroke="BLACK" strokeType="INSIDE" />
+      <ImageView fitHeight="458.0" fitWidth="612.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Olympics.png" />
+         </image>
+         <effect>
+            <GaussianBlur />
+         </effect>
+      </ImageView>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Button layoutX="272.0" layoutY="364.0" mnemonicParsing="false" onAction="#gameresult" text="Result" />
+            <JFXButton fx:id="ath2" layoutX="27.0" layoutY="105.0" text="Ath2" textFill="#f21a1a" />
+            <JFXButton fx:id="ath3" layoutX="27.0" layoutY="142.0" text="Ath3" textFill="#f21a1a" />
+            <JFXButton fx:id="ath4" layoutX="27.0" layoutY="181.0" text="Ath4" textFill="#f21a1a" />
+            <JFXButton fx:id="ath5" layoutX="27.0" layoutY="219.0" text="Ath5" textFill="#f21a1a" />
+            <JFXButton fx:id="ath6" layoutX="27.0" layoutY="255.0" text="Ath6" textFill="#f21a1a" />
+            <JFXButton fx:id="ath7" layoutX="27.0" layoutY="291.0" text="Ath7" textFill="#f21a1a" />
+            <JFXButton fx:id="ath8" layoutX="27.0" layoutY="326.0" text="Ath8" textFill="#f21a1a" />
+            <ImageView fitHeight="313.0" fitWidth="20.0" layoutX="512.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/red.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="433.0" fitWidth="7.0" layoutX="83.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/black.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="gtp" layoutX="21.0" layoutY="21.0" text="GameType: " textFill="#337ac6">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="gid" layoutX="212.0" layoutY="21.0" text="GameID: " textFill="#337ac6">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="gre" layoutX="396.0" layoutY="21.0" text="Referee: " textFill="#337ac6">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="ath1" layoutX="27.0" layoutY="69.0" text="Ath1" textFill="#f21a1a" />
+         </children>
+      </AnchorPane>
    </children>
-</AnchorPane>
+</StackPane>

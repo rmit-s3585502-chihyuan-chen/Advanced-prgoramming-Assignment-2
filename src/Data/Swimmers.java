@@ -13,8 +13,8 @@ public class Swimmers extends Athletes{
 	public Swimmers(String id, String type,String name, int age, String state,int point) {
 		super(id,type,name, age, state,point);
 	}
-	//Restrict time and run Swimming and set parameter id to connect with driver
-	public int compete(String superName) {
+	//Restrict time and set parameter game type to check athlete type to compete which game
+	public int compete(String GameType) {
 		int max=200;//set the max game time
         int min=100;//set the max game time
         Random random = new Random();//Create random variable

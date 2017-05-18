@@ -24,7 +24,7 @@ public class displayResult { //display past game results
 @FXML
 private TextArea display;
 	@FXML
-	private void initialize() { //show past game results via the for loop to get data in the history list
+	private void initialize() { //show past game results via the for loop to get data from the history list
 		for (int i = 0; i < Ozlympic.history.size(); i++) {
 		String gameresults = Ozlympic.history.get(i);
 		display.appendText(gameresults);
@@ -32,10 +32,10 @@ private TextArea display;
 }
 	@FXML
 	private void home(ActionEvent event) throws IOException { //back to main menu
-		Parent menuPage =FXMLLoader.load(getClass().getResource("GameMenu.fxml"));
-		Scene menuPageScene = new Scene(menuPage);
-		Stage thisStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-		thisStage.setScene(menuPageScene);
-		thisStage.show();		
+		Parent homePage =FXMLLoader.load(getClass().getResource("GameMenu.fxml"));
+		Scene homePageScene = new Scene(homePage);
+		Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		homeStage.setScene(homePageScene);
+		homeStage.show();		
 	}
 }

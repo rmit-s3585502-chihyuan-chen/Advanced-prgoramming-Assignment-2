@@ -56,17 +56,17 @@ private ListView officials;
 @FXML
 private ListView chiefOfficials;
 @FXML
-private ObservableList<String> athleteList =FXCollections.observableArrayList();
+private ObservableList<String> athleteList =FXCollections.observableArrayList(); //import athleteList info which will display in the ListView GUI
 @FXML
-private ObservableList<String> participant =FXCollections.observableArrayList();
+private ObservableList<String> participant =FXCollections.observableArrayList(); //import participant info which will display in the ListView GUI
 @FXML
-private ObservableList<String> officers =FXCollections.observableArrayList();
+private ObservableList<String> officers =FXCollections.observableArrayList(); //import officers info which will display in the ListView GUI
 @FXML
-private ObservableList<String> chiefOfficer =FXCollections.observableArrayList();
+private ObservableList<String> chiefOfficer =FXCollections.observableArrayList();//import chief officer info which will display in the ListView GUI
 private boolean officerSetting;
 @FXML
-private void home(ActionEvent event) throws IOException { //back to home
-	athleteList.clear();
+private void home(ActionEvent event) throws IOException { //back to home and restore default setting 
+	athleteList.clear(); 
 	participant.clear();
 	Ozlympic.gameSelect=false;
 	Ozlympic.tempAthletes.clear();
@@ -99,7 +99,7 @@ private void initialize(){ //load athletes data and officer data
 	
 }
 @FXML
-private void List(){	 	//use list to store athletes and officer list
+private void List(){	 	//use list to store athletes and officer data which come form text or db
 	
 	for(int i = 0; i < Ozlympic.tempAthletes.size(); i++) {			
 		Athletes players = Ozlympic.tempAthletes.get(i);					
@@ -124,7 +124,7 @@ private void showSelection() {//show users selection of athletes and officer
 @FXML
 private void Next(ActionEvent event) throws Exception { //confirm the game setting
 		try {
-		if(officerSetting == false) {
+		if(officerSetting == false) {//inspect the number of officer
 			throw new NoRefereeException();
 		} else { 
 			try {
@@ -143,11 +143,11 @@ private void Next(ActionEvent event) throws Exception { //confirm the game setti
 						}
 					}
 					getAssignOfficer();
-					Parent menuPage =FXMLLoader.load(getClass().getResource("StartGame.fxml"));
-					Scene menuPageScene = new Scene(menuPage);
-					Stage thisStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-					thisStage.setScene(menuPageScene);
-					thisStage.show();
+					Parent StartGamePage =FXMLLoader.load(getClass().getResource("StartGame.fxml"));
+					Scene StartGamePageScene = new Scene(StartGamePage);
+					Stage StartGameStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+					StartGameStage.setScene(StartGamePageScene);
+					StartGameStage.show();
 					
 			} catch (Exception Exception) {
 					} 
@@ -156,7 +156,7 @@ private void Next(ActionEvent event) throws Exception { //confirm the game setti
 	}
 }
 @FXML
-private void assignOfficier(){	//add officer 	
+private void assignOfficier(){	//add officer and inspect exception
 	try {
 		if(officerSetting == true) {
 			throw new OverRefereeException(); 
@@ -191,7 +191,7 @@ private void getAssignOfficer() { //show assign officer
 		}
 	}
 @FXML
-private void addParticipant() { //add who will compete the game
+private void addParticipant() { //add who will compete the game and inspect exception
 	try {
 		if(participant.size() > 7) {
 			throw new GameFullException(); 
@@ -209,11 +209,11 @@ private void addParticipant() { //add who will compete the game
 			}
 		}
 		showSelection();//Refresh list
-} catch(Exception ExceptionAlert) {
+} catch(Exception Exception) {
 	}
 }
 @FXML
-private void deleteParticipant() {	
+private void deleteParticipant() {	//delete participant that user select
 
 	String delete = (String) participants.getSelectionModel().getSelectedItem();
 	if(delete != null) { 
@@ -223,7 +223,7 @@ private void deleteParticipant() {
 	}
 }
 @FXML
-private void deleteOfficers() {	
+private void deleteOfficers() {	//delete officer that user assign
 
 	String delete = (String) chiefOfficials.getSelectionModel().getSelectedItem();
 	if(delete != null) { 

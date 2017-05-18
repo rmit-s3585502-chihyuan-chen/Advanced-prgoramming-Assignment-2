@@ -21,7 +21,7 @@ public class Games {
 	private Athletes  player;
 	private Official offical;
 	public ArrayList<Athletes> athletes= new ArrayList<Athletes>(); //assign game id and game officer
-	public void playGame (ArrayList<Athletes> addAthletes, Games gameinfo, ArrayList<Official>official){
+	public void playGame (ArrayList<Athletes> addAthletes, Games gameinfo, ArrayList<Official>official){//assign attributes for each game
 		this.setGameId(GameId);		
 		String superName = GameType;
 	}
@@ -30,42 +30,42 @@ public class Games {
 		return athletes;
 	}
 	
-	public Athletes getaddAthletes(){ //get player list
+	public Athletes getaddAthletes(){ //get player that user add into list
 		return player;
 	}
-	public String GameType() {	
+	public String GameType() {	  //return game type
 		return GameType;
 	}
 
-	public String getGameId() {
+	public String getGameId() {//get game id
 		return GameId;
 	}
 	
-	public void setGameId(String GameId) {
+	public void setGameId(String GameId) { //set game id
 		this.GameId = GameId;
 	}
 
-	public void setGameType(String GameType) {
+	public void setGameType(String GameType) {//set game type
 		this.GameType = GameType;
 	}
 
-	public static int getGameRound() {
+	public static int getGameRound() { //get game round
 		GameRound ++;
 		return GameRound;
 	}
 
-	public static void setGameRound(int GameRound) {
+	public static void setGameRound(int GameRound) { //set game round
 		Games.GameRound = GameRound;
 	}
-	public static void ReduceGameRound(int GameRound) {
+	public static void ReduceGameRound(int GameRound) { //reduce the game round
 		Games.GameRound -= GameRound;
 	}
 
-	public Official getOfficial() {
+	public Official getOfficial() { //get official info
 		return offical;
 	}
 
-	public void setOfficial(Official offical) {
+	public void setOfficial(Official offical) { //set official
 		this.offical = offical;
 	}
 }
